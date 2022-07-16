@@ -2,5 +2,4 @@ _site/
 .bundle
 .jekyll-cache/
 vendor/
-Gemfile
-Gemfile.lock
+
