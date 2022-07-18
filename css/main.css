@@ -19,6 +19,11 @@ h1 {
 h2 {
   font-size: 2em;
 }
+h4 {
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 a {
   color: #f00;
@@ -29,7 +34,7 @@ p {
   margin: 0.75em 0;
 }
 
-h2~p {
+h2 ~ p {
   font-size: 0.8em;
   font-style: italic;
   margin: 1em auto 0;
@@ -72,12 +77,12 @@ h2~p {
   padding: 5.5vh 60px 0 0;
 }
 
-.header-nav>li {
+.header-nav > li {
   display: inline-block;
   margin-left: 1em;
 }
 
-.header-nav>li~li {
+.header-nav > li ~ li {
   border-left: 1px solid rgba(255, 255, 255, 0.3);
   padding-left: 1em;
 }
@@ -98,11 +103,11 @@ h2~p {
   color: #ed6e2f;
 }
 
-.header-nav>li:first-child a {
+.header-nav > li:first-child a {
   color: #ed6e2f;
 }
 
-.header-nav>li:first-child a:hover {
+.header-nav > li:first-child a:hover {
   color: #fff;
 }
 
@@ -182,7 +187,7 @@ h2~p {
   width: 2.5em;
 }
 
-.social-list>li {
+.social-list > li {
   display: inline-block;
   margin: 0 0.5em;
 }
@@ -319,7 +324,7 @@ h2~p {
   padding: 2em;
 }
 
-.col-three .col~.col {
+.col-three .col ~ .col {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -334,14 +339,23 @@ h2~p {
 .col-three .col-aside {
   flex: 0 1 20em;
 }
-
+.col-two {
+  display: flex;
+}
+.col-two .col-aside {
+  flex: 0 0 20em;
+  order: 1;
+}
+.col-two .col-content {
+  flex: 1;
+}
 /* GALLERY STYLES */
 .gallery-thumbs {
   height: 90vh;
   overflow: scroll;
 }
 
-.gallery-thumbs>div {
+.gallery-thumbs > div {
   cursor: pointer;
 }
 
@@ -378,4 +392,67 @@ h2~p {
 
 .gallery-info h3 {
   margin-bottom: 1em;
+}
+/* PAGE STYLES */
+.page {
+  margin: 10vh auto 15vh;
+  max-width: 980px;
+  width: 85vw;
+}
+.page h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.page h2 {
+  margin-bottom: 0.5em;
+}
+.page h4 {
+  margin-bottom: 1em;
+}
+/* BLOG STYLES */
+.blog-recent {
+  text-align: right;
+}
+.blog-title-list {
+  list-style: none;
+  padding: 0;
+}
+.blog-title-list li ~ li {
+  margin-top: 1.5em;
+}
+.blog-title-list span {
+  color: #999;
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 0.5em;
+}
+
+.blog-posts ~ .blog-posts {
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);
+  margin-top: 4em;
+  padding-top: 4em;
+}
+.blog-posts .post-header {
+  font-size: 0.8rem;
+}
+.post-header {
+  margin-bottom: 1.5em;
+}
+.post-header img,
+.post-header .social-link {
+  margin-right: 0.5em;
+}
+.post-header img {
+  border-radius: 99px;
+  display: inline-block;
+  height: 2.5em;
+  vertical-align: middle;
+}
+.posts-image {
+  background-position: center;
+  background-size: cover;
+  height: 6em;
+  margin-bottom: 1.5em;
 }
