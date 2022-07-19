@@ -1,3 +1,9 @@
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.7em;
+  font-weight: bold;
+}
+
 h2 {
   font-size: 1.7em;
   margin-bottom: 0.5em;
@@ -6,7 +12,7 @@ h2 {
 
 .grid-container {
   display: grid;
-  grid-template-areas: "header header header" "menu content panel" "footer footer footer";
+  grid-template-areas: "header header header" "menu banner banner" "menu content panel" "footer footer footer";
   grid-template-columns: 10em 1fr 15em;
   grid-template-rows: minmax(4em, auto) 1fr auto;
   min-height: 100vh;
@@ -20,25 +26,60 @@ h2 {
 .grid-header {
   background-color: #ccc;
   grid-area: header;
+  padding: 1em;
+  text-align: center;
 }
 
 .grid-menu {
   background-color: #c0c0c0;
   grid-area: menu;
+  padding: 1em;
+}
+
+.grid-menu ul,
+.grid-panel ul,
+.grid-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .grid-content {
   grid-area: content;
+  padding: 3em 3em 4em;
 }
 
 .grid-panel {
-  background-color: #eee;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 4em 2em 4em 3em;
   grid-area: panel;
 }
 
 .grid-footer {
   background-color: #ddd;
   grid-area: footer;
+  padding: 4em 1em;
+  text-align: center;
+}
+
+.grid-footer li {
+  display: inline-block;
+}
+
+.grid-expand {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  grid-column: content;
+  grid-row: header-start /footer-end;
+  z-index: 2;
+}
+
+.grid-banner {
+  align-self: start;
+  background-color: rgba(168, 214, 247, 0.9);
+  grid-area: banner;
+  padding: 1em;
+  z-index: 10;
 }
 
 .grid {
