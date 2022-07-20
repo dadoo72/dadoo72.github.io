@@ -62,6 +62,11 @@ h1, h2, h3 {
   grid-column: 4/6;
 }
 
+.grid_cols-3max {
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  grid-gap: 3em;
+}
+
 .hero {
   background-color: #a8d6f7;
   min-height: 50vh;
@@ -83,10 +88,40 @@ h1, h2, h3 {
 }
 
 .feature {
+  grid-template-rows: 4em 1fr 4em;
   min-height: 70vh;
+}
+
+.feature_img {
+  background-image: url('/images/shark.jpg');
+  background-size: cover;
+  grid-column: 1/9;
+  grid-row: 1/4;
+}
+
+.feature_content {
+  background-color: #183a53;
+  color: #fff;
+  grid-row-start: 2;
+  padding: 2em;
+}
+
+.feature_content-1 {
+  align-self: start;
+  grid-column: 2/6
+}
+
+.feature_content-2 {
+  align-self: end;
+  grid-column: 5/8
 }
 
 .footer {
   background-color: #ddd;
+  justify-items: center;
   padding: 4em 1em;
+}
+
+.footer_menu-first {
+  grid-column-start: 3;
 }
